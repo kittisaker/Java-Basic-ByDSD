@@ -1,181 +1,172 @@
-# DSD Java Basic Part 3
+# DSD Java Basic Part 4
 
-## Type Casting
+## Workshop : If...Else
 
 <details>
+<summary>Calc.java</summary>
 
-<summary>Widening Casting (automatically)</summary>
+```java
+class Calc {
+    public static void main(String[] args) {
+        int i = Integer.parseInt(args[0]);
 
-```
-byte --> short --> char --> int --> long --> float --> double
+        String result = (i > 10) ? "Heigh" : "Low";
+
+        System.out.println(result);
+    }    
+}
 ```
 
 </details>
 
 <details>
-<summary>Narrowing Casting (manually)</summary>
+<summary>Complier and Run code</summary>
 
 ```
-double --> float --> long --> int --> char --> short --> byte
+>javac Calc.java
+
+>java Calc 11
+Heigh
 ```
 
 </details>
 
+```
+Case 1
+>java Calc 1 2       # 1 + 2
+output Value = 3
 
-
-## Arithmetic Operators
+Case 2
+>java Calc 1     # 1
+output Value = 1
+```
 
 <details>
-<summary>Arithmetic Operators</summary>
+<summary>Calc.java</summary>
 
-```
-+
--
-*
-/
-%
-++
---
+```java
+class Calc{
+    public static void main(String[] args) {
+
+        int num_01 = 0, num_02 = 0, result = 0;
+        int len = args.length;
+
+        if(len >= 1){
+            num_01 += Integer.parseInt(args[0]);
+        }else if(len >= 2){
+            num_02 += Integer.parseInt(args[1]);
+        }
+
+        result = num_01 + num_02;
+        System.out.println("Value = " + result);
+    }
+}
 ```
 
 </details>
 
-## Assignment Operators
+## Workshop : Short Hand If...Else
+
+```
+Case 1
+>java Calc 1 2       # 1 + 2
+output Value = 3
+
+Case 2
+>java Calc 1     # 1
+output Value = 1
+```
 
 <details>
-<summary>Assignment Operators</summary>
+<summary>Calc.java</summary>
 
-```
-=
-+=
--=
-*=
-/=
-%=
-&=
-|=
-^=
->>=
-<<=
+```java
+class Calc {
+    public static void main(String[] args) {
+        int c = 0;
+        int len = args.length;
+
+        int a = (len >= 1) ? Integer.parseInt(args[0]) : 0;
+        int b = (len >= 2) ? Integer.parseInt(args[1]) : 0;
+        c = a + b;
+
+        System.out.println("Value = " +c);
+    } 
+}
 ```
 
 </details>
 
-## Comparision Operators
+## Switch Statement (Workshop)
+
+```
+Case 1
+>java Calc add 1 2
+output Value = 3
+
+Case 2
+>java Calc add 1
+output Value = 1
+
+Case 3
+>java Calc add
+output Value = 0
+```
 
 <details>
-<summary>Comparision Operators</summary>
+<summary></summary>
 
-```
-==
-!=
->
-<
->=
-<=
-```
+```java
+class Calc {
+    public static void main(String[] args) {
+        int c = 0;
+        int len = args.length;
 
-</details>
-
-## Logical Operators
-
-<details>
-<summary>Logical Operators</summary>
-
-```
-&&
-||
-!
-```
-
-</details>
-
-## String
-
-<details>
-<summary>String</summary>
-
-```
-.length();
-.toUpperCase();
-.toLowerCase();
-.indexOf("F");
+        switch(args[0]){
+            case "add":
+                int a = (len >= 2) ? Integer.parseInt(args[1]) : 0;
+                int b = (len >= 3) ? Integer.parseInt(args[2]) : 0;
+                c = a + b;
+                break;
+            default:
+                System.out.println("Not support");
+                break;
+        }
+        System.out.println("Value = " +c);
+    } 
+}
 ```
 
 </details>
 
-## String Concatenation
+## While Loop
 
-<details>
-<summary>String Concatenation</summary>
-
+* Syntax
 ```
-The + operator
-The concat() method
-```
-
-</details>
-
-## Special Characters
-
-<details>
-<summary>Special Characters</summary>
-
-```
-\'
-\"
-\\
-\n
-\r
-\t
-\b
-\f
+While (condition){
+    // code block to be executed
+}
 ```
 
-</details>
-
-## Math
-
-<details>
-<summary>Math</summary>
+## Do/While Loop
+* Syntax
 
 ```
-Math.max(x, y)
-Math.min(x, y)
-Math.sqrt(x)
-Math.abs(x)
-Math.random()
+do{
+    // code block to be executed
+}While (condition)
 ```
 
-</details>
+## For Loop
+* Syntax
+```java
+for(statement 1; statement 2; statement 3){
+    // code block to be executed
+}
 
-## Conditions and If Statements
-
-<details>
-<summary>Conditions and If Statements</summary>
-
+// Statement 1 is executed (one time) before the execution of the code block.
+// Statement 2 defines the condition for executing the code block.
+// Statement 3 is executed (every time) after the code block has been executed.
 ```
-if
-else
-else if
-```
-
-</details>
-
-## Short Hand If...Else
-
-<details>
-<summary>Short Hand If...Else</summary>
-
-```
-Syntax
-variable = (condition) ? expressionTrue : expressionFalse;
-
-example
-int time = 20;
-String result = (time < 18) ? "Good day." : "Good evening.";
-```
-
-</details>
 
 ---
