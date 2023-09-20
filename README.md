@@ -12,21 +12,21 @@ x = y = z = 50;
 ## Data types
 
 * Primitive data types
-```
-- byte
-- short
-- int
-- long
-- float
-- double
-- boolean
-- char
+```java
+byte
+short
+int
+long
+float
+double
+boolean
+char
 ```
 
 * Non-primitive data types
-```
-- String
-- Arrays
-- Classes
+```java
+String
+Arrays
+Classes
 ```
 ---
