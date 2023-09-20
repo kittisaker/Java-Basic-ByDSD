@@ -1,16 +1,9 @@
-class Calc {
-    public static void main(String[] args) {
-        int mynum [] [] = {{1, 2, 3}, {4, 5, 6}};
+public class Calc {
+    static void add(int a, int b){  // <-- Add static
+        System.out.println(a + b);
+    }
 
-        // for(int i = 0; i < mynum.length; i++){
-        //     for(int j = 0; j < mynum[i].length; j++){
-        //         System.out.println("Value = " + mynum[i][j]);
-        //     }
-        // }
-        for(int[] row : mynum){
-            for(int element : row){
-                System.out.println("Value = " + element);
-            }
-        }
+    public static void main(String[] args) {
+        add(1, 2);     
     }
 }

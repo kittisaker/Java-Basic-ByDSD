@@ -1,216 +1,92 @@
-# DSD Java Basic Part 5
+# DSD Java Basic Part 6
 
-## Workshop : For loop
-```
-Case 4
->java Calc sum 1 2 3 4 5 6 7
-output Value = 28
-```
+## Method
 
+</br>
+* Problem
 <details>
 <summary>Calc.java</summary>
 
-```java
-class Calc {
-    public static void main(String[] args) {
-        int c = 0;
-        int len = args.length;
-
-        switch(args[0]){
-            case "add":
-                int a = (len >= 2) ? Integer.parseInt(args[1]) : 0;
-                int b = (len >= 3) ? Integer.parseInt(args[2]) : 0;
-                c = a + b;
-                break;
-            case "sum":
-                for(int i = 1; i < len; i++){
-                    c += Integer.parseInt(args[i]);
-                }
-                break;
-            default:
-                System.out.println("Not support");
-                break;
-        }
-        System.out.println("Value = " +c);
-    } 
-}
-```
-</details>
-
-## Workshop : While loop
-
-```
-Case 4
->java Calc sum 1 2 3 4 5 6 7
-output Value = 28
-```
-
-<details>
-<summary>Calc.java</summary>
-
-```java
-class Calc {
-    public static void main(String[] args) {
-        int c = 0;
-        int len = args.length;
-
-        switch(args[0]){
-            case "add":
-                int a = (len >= 2) ? Integer.parseInt(args[1]) : 0;
-                int b = (len >= 3) ? Integer.parseInt(args[2]) : 0;
-                c = a + b;
-                break;
-            case "sum":
-                // for(int i = 1; i < len; i++){
-                //     c += Integer.parseInt(args[i]);
-                // }
-                int i = 1;
-                while(i < len){
-                    c += Integer.parseInt(args[i]);
-                    i++;
-                }
-                break;
-            default:
-                System.out.println("Not support");
-                break;
-        }
-        System.out.println("Value = " +c);
-    } 
-}
-```
-</details>
-
-
-## Nested Loop
-```
-Pass
-```
-
-## For-Each Loop
-* Syntax
-```java
-for(type variableName : arrayName){
-    // code block to be executed
-}
-```
-
-* Example
 ```java
 public class Calc {
+    void add(int a, int b){
+        System.out.println(a + b);
+    }
+
     public static void main(String[] args) {
-        for(String a: args){
-            System.out.println("Value = " + a);
-        }
+        add(1, 2);       // <-- Cannot use methon add
     }
 }
 ```
+</details>
 
-## Workshop : For-Each loop
-```
-Case 4
-java Calc sum 1 2 3 4 5 6 7
-output Value = 28
-```
-
+</br>
+* Solution
 <details>
 <summary>Calc.java</summary>
 
 ```java
-class Calc {
+public class Calc {
+    static void add(int a, int b){  // <-- Add static
+        System.out.println(a + b);
+    }
+
     public static void main(String[] args) {
-        int c = 0;
-        int len = args.length;
-
-        switch(args[0]){
-            case "add":
-                int a = (len >= 2) ? Integer.parseInt(args[1]) : 0;
-                int b = (len >= 3) ? Integer.parseInt(args[2]) : 0;
-                c = a + b;
-                break;
-            case "sum":
-                // -- for loop --
-                // for(int i = 1; i < len; i++){
-                //     c += Integer.parseInt(args[i]);
-                // }
-                // -- while loop --
-                // int i = 1;
-                // while(i < len){
-                //     c += Integer.parseInt(args[i]);
-                //     i++;
-                // }
-                // -- for-each --
-                for(String str : args){
-                    if(str == args[0]){
-                        continue;
-                    }
-                    c += Integer.parseInt(str);
-                }
-                break;
-            default:
-                System.out.println("Not support");
-                break;
-        }
-        System.out.println("Value = " +c);
-    } 
-}
-```
-
-</details>
-
-## Break
-```
-pass
-```
-
-## Arrays
-
-```java
-int mynum [] [] = {{1, 2, 3}, {4, 5, 6}};
-
-for(int i = 0; i < mynum.length; i++){
-    for(int j = 0; j < mynum[i].length; j++){
-        System.out.println("Value = " + mynum[i][j]);
+        add(1, 2);     
     }
 }
 ```
+</details>
 
-## Workshop Array : For-Each loop
+## Workshop : Method
+
+```java
+public static void add(int num_01, int num_02){
+    // Logic
+}
+
+public static void sum(int arr[]){
+    // logic
+}
+
+public static void main(String[] args) {
+    // Call method
+}
 ```
-mynum [] [] = {{1, 2, 3}, {4, 5, 6}}
+
 ```
-```
->java Calc
-1
-2
-3
-4
-5
-6
+Case 1
+>java Calc add 1 2
+output Value = 3
+
+Case 2
+>java Calc add 1
+output Value = 1
+
+Case 3
+>java Calc add
+output Value = 0
+
+Case 4
+>java Calc sum 1 2 3 4 5
+output Value = 15
 ```
 
 <details>
 <summary>.java</summary>
 
 ```java
-class Calc {
-    public static void main(String[] args) {
-        int mynum [] [] = {{1, 2, 3}, {4, 5, 6}};
 
-        // for(int i = 0; i < mynum.length; i++){
-        //     for(int j = 0; j < mynum[i].length; j++){
-        //         System.out.println("Value = " + mynum[i][j]);
-        //     }
-        // }
-        for(int[] row : mynum){
-            for(int element : row){
-                System.out.println("Value = " + element);
-            }
-        }
-    }
-}
 ```
-
 </details>
 
 ---
 
+## 
+<details>
+<summary>.java</summary>
+
+```java
+
+```
+</details>
