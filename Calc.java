@@ -1,18 +1,16 @@
 class Calc {
     public static void main(String[] args) {
-        int c = 0;
-        int len = args.length;
+        int mynum [] [] = {{1, 2, 3}, {4, 5, 6}};
 
-        switch(args[0]){
-            case "add":
-                int a = (len >= 2) ? Integer.parseInt(args[1]) : 0;
-                int b = (len >= 3) ? Integer.parseInt(args[2]) : 0;
-                c = a + b;
-                break;
-            default:
-                System.out.println("Not support");
-                break;
+        // for(int i = 0; i < mynum.length; i++){
+        //     for(int j = 0; j < mynum[i].length; j++){
+        //         System.out.println("Value = " + mynum[i][j]);
+        //     }
+        // }
+        for(int[] row : mynum){
+            for(int element : row){
+                System.out.println("Value = " + element);
+            }
         }
-        System.out.println("Value = " +c);
-    } 
+    }
 }
